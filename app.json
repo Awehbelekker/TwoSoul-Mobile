@@ -4,12 +4,10 @@
     "slug": "twosoul-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#10b981"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,18 +18,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#10b981"
       },
       "package": "com.twosoul.app",
       "permissions": [
-        "INTERNET",
-        "RECORD_AUDIO",
-        "CAMERA"
+        "INTERNET"
       ]
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     },
     "plugins": [
       [
