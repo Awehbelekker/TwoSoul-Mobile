@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-transparent text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Widget glassmorphism effect */
+  .widget-glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  /* Personality-specific animations */
+  .personality-serious {
+    @apply animate-steady-pulse;
+  }
+
+  .personality-goofy {
+    @apply animate-bouncy-wiggle;
+  }
+
+  .personality-creative {
+    @apply animate-flowing-gradient;
+    background: linear-gradient(45deg, #10b981, #3b82f6, #8b5cf6);
+    background-size: 300% 300%;
+  }
+
+  .personality-adaptive {
+    @apply animate-gentle-float;
+  }
+
+  .personality-professional {
+    @apply animate-steady-pulse;
+  }
+
+  .personality-casual {
+    @apply animate-breathing;
+  }
+
+  /* Chat message styles */
+  .chat-message {
+    @apply max-w-[80%] px-3 py-2 rounded-2xl text-sm break-words;
+  }
+
+  .chat-message-user {
+    @apply bg-blue-500 text-white rounded-br-md ml-auto;
+  }
+
+  .chat-message-assistant {
+    @apply bg-white/80 rounded-bl-md mr-auto;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply hover:scale-105 active:scale-95;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200;
+    @apply hover:scale-105 active:scale-95;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-1;
+  }
+
+  /* Input styles */
+  .input-primary {
+    @apply w-full px-3 py-2 rounded-lg border border-opacity-30;
+    @apply bg-white/50 backdrop-blur-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-opacity-50;
+    @apply transition-all duration-200;
+  }
+
+  /* Scrollbar styles */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  /* Notification styles */
+  .notification {
+    @apply p-4 rounded-lg shadow-lg backdrop-blur-md;
+    @apply border border-opacity-30;
+    @apply transition-all duration-300;
+  }
+
+  .notification-info {
+    @apply bg-blue-50/90 border-blue-200 text-blue-800;
+  }
+
+  .notification-success {
+    @apply bg-green-50/90 border-green-200 text-green-800;
+  }
+
+  .notification-warning {
+    @apply bg-yellow-50/90 border-yellow-200 text-yellow-800;
+  }
+
+  .notification-error {
+    @apply bg-red-50/90 border-red-200 text-red-800;
+  }
+
+  /* Tooltip styles */
+  .tooltip {
+    @apply absolute z-50 px-2 py-1 text-xs;
+    @apply bg-black/80 text-white rounded;
+    @apply pointer-events-none;
+    @apply opacity-0 transition-opacity duration-200;
+  }
+
+  .tooltip-visible {
+    @apply opacity-100;
+  }
+
+  /* Loading spinner */
+  .spinner {
+    @apply inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full;
+    animation: spin 1s linear infinite;
+  }
+
+  /* Voice activity indicator */
+  .voice-bars {
+    @apply flex items-end space-x-0.5 h-4;
+  }
+
+  .voice-bar {
+    @apply w-1 bg-current rounded-full;
+    animation: voice-activity 0.6s ease-in-out infinite alternate;
+  }
+
+  .voice-bar:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .voice-bar:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  .voice-bar:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  /* Text selection */
+  .select-none {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Backdrop blur utilities */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+
+  /* Custom focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+  }
+
+  /* Drag handle */
+  .drag-handle {
+    cursor: grab;
+  }
+
+  .drag-handle:active {
+    cursor: grabbing;
+  }
+
+  /* Personality color utilities */
+  .text-personality-serious {
+    color: rgb(59, 130, 246);
+  }
+
+  .text-personality-goofy {
+    color: rgb(239, 68, 68);
+  }
+
+  .text-personality-creative {
+    color: rgb(16, 185, 129);
+  }
+
+  .text-personality-adaptive {
+    color: rgb(245, 158, 11);
+  }
+
+  .text-personality-professional {
+    color: rgb(99, 102, 241);
+  }
+
+  .text-personality-casual {
+    color: rgb(139, 92, 246);
+  }
+
+  /* Background personality utilities */
+  .bg-personality-serious {
+    background-color: rgba(59, 130, 246, 0.1);
+  }
+
+  .bg-personality-goofy {
+    background-color: rgba(239, 68, 68, 0.1);
+  }
+
+  .bg-personality-creative {
+    background-color: rgba(16, 185, 129, 0.1);
+  }
+
+  .bg-personality-adaptive {
+    background-color: rgba(245, 158, 11, 0.1);
+  }
+
+  .bg-personality-professional {
+    background-color: rgba(99, 102, 241, 0.1);
+  }
+
+  .bg-personality-casual {
+    background-color: rgba(139, 92, 246, 0.1);
+  }
+}
+
+/* Keyframe animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes voice-activity {
+  0% {
+    height: 4px;
+  }
+  100% {
+    height: 16px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .widget-glass {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
