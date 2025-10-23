@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "TwoSoul",
+    "slug": "twosoul-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#10b981"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.twosoul.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#10b981"
+      },
+      "package": "com.twosoul.app",
+      "permissions": [
+        "INTERNET"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "buildToolsVersion": "34.0.0"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "8f811f89-c552-43ff-95fa-7e812fe1ea1b"
+      }
+    }
+  }
+}

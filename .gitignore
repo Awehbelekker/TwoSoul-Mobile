@@ -169,10 +169,15 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+*.mobileprovision
+*.p8
+*.p12
+*.key
 
 # Node modules
 node_modules/
 npm-debug.log*
+npm-debug.*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
@@ -180,9 +185,17 @@ yarn-error.log*
 # Electron
 dist-electron/
 
-# React Native
+# React Native / Expo
 .expo/
 .expo-shared/
+web-build/
+*.orig.*
+
+# Metro
+.metro-health-check*
+
+# Security files
+*.jks
 
 # Model checkpoints and large files
 *.pt
